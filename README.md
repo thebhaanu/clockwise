@@ -1,6 +1,7 @@
 # ⌚Clockwise.io
 
 ![Clockwise](/map.jpeg)
+[Live Demo](https://thebhaanu.github.io/clockwise/)
 
 A World Clock that shows the time of every country (I think I have added every country). This website is made with HTML, CSS and JavaScript.
 
