@@ -136,7 +136,7 @@ const countries = [
         { name: 'Central Standard Time', cities: ['Winnipeg'], offset: -6 },
         { name: 'Eastern Standard Time', cities: ['Toronto'], offset: -5 },
         { name: 'Atlantic Standard Time', cities: ['Halifax'], offset: -4 },
-        { name: 'Newfoundland Standard Time', cities: ['St. John’s'], offset: -3.5 }
+        { name: 'Newfoundland Standard Time', cities: ["St. John's"], offset: -3.5 }
     ]},
     { id: 33, name: 'Central African Republic', timezones: [
         { name: 'West Africa Time', cities: ['Bangui'], offset: 1 }
@@ -799,9 +799,15 @@ function addSelectedTimezone(country, timezone, offset, cities) {
         <p class="cities-display">${citiesDisplay}</p>
         <div class="time">${timeData.time}</div>
         <div class="date">${timeData.date}</div>
+        <button class="remove-btn"><i class="fas fa-times"></i></button>
     `;
     
-    selectedTimezone.innerHTML = '';
+    // Add event listener to remove button
+    selectedItem.querySelector('.remove-btn').addEventListener('click', function() {
+        selectedItem.remove();
+    });
+    
+    // Append to the container instead of replacing
     selectedTimezone.appendChild(selectedItem);
     
     // Clear search
@@ -854,11 +860,11 @@ function updateAllTimes() {
         dateDisplay.textContent = timeInZone.date;
     });
     
-    // Update selected timezone if any
-    if (selectedTimezone.querySelector('.selected-item')) {
-        const timeElement = selectedTimezone.querySelector('.time');
-        const dateElement = selectedTimezone.querySelector('.date');
-        const offsetAttr = selectedTimezone.querySelector('.selected-item').getAttribute('data-offset');
+    // Update all selected timezones
+    document.querySelectorAll('#selected-timezone .selected-item').forEach(item => {
+        const timeElement = item.querySelector('.time');
+        const dateElement = item.querySelector('.date');
+        const offsetAttr = item.getAttribute('data-offset');
         
         if (offsetAttr) {
             const offset = parseFloat(offsetAttr);
@@ -867,7 +873,7 @@ function updateAllTimes() {
             timeElement.textContent = timeData.time;
             dateElement.textContent = timeData.date;
         }
-    }
+    });
 }
 
 // Initialize the app when the DOM is loaded
