@@ -232,6 +232,7 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .selected-item h3 {
@@ -243,6 +244,29 @@ h2 {
     color: #d0d0d0;
     font-style: italic;
     margin-bottom: 10px;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    font-size: 16px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
 .time {
