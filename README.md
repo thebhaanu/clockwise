@@ -12,5 +12,5 @@ A World Clock that shows the time of every country (I think I have added every c
 The JavaScript takes the time from user's device and then calculate the UTC (Coordinated Universal Time) and from the UTC it calculates the time for each Country. 
 
 ## How I got the idea?
-I was thinking about some other idea and this just struck my mind. The HTML and CSS are written by me and the Javasvript (learning) is written by ChatGPT.
+I was thinking about some other idea and this just struck my mind. I write the HTML and CSS and the Javasvript (learning) is written by ChatGPT (not every block of code).
 
